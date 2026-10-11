@@ -1,0 +1,67 @@
+@import "tailwindcss";
+
+/* 
+  ============================================
+  THEME EXTENSIONS
+  Equivalents to: theme.extend.borderWidth
+  ============================================
+*/
+@theme {
+  --border-width-3: 3px;
+  --border-width-5: 5px;
+  --border-width-6: 6px;
+  --border-width-7: 7px;
+}
+
+/*
+  ============================================
+  SAFELIST (via @source inline)
+  ============================================
+*/
+
+/* 
+  1. COLORS 
+  Example: bg-red-500, text-blue-900, hover:border-slate-200
+*/
+@source inline("{hover:,focus:,}{bg,text,border}-{slate,gray,zinc,neutral,stone,red,orange,amber,yellow,lime,green,emerald,teal,cyan,sky,blue,indigo,violet,purple,fuchsia,pink,rose}-{50,{100..900..100},950}");
+@source inline("{bg,text,border}-{black,white,transparent,current,inherit}");
+
+/* 
+  2. SPACING 
+  Matches: m-0, mt-4, p-1.5, px-auto
+  Note: {t,b,r,l,x,y,} The comma at the end handles the base 'm-4' case not just 'mt-4'
+*/
+@source inline("{m,p}{t,b,r,l,x,y,}-{0,px,0.5,1,1.5,2,2.5,3,3.5,4,5,6,7,8,9,10,11,12,14,16,20,24,28,32,36,40,44,48,52,56,60,64,72,80,96,auto}");
+
+/* 
+  3. BORDERS (Width, Style, Radius)
+*/
+/* Widths: Includes default (0,2,4,8) AND your custom (3,5,6,7) */
+@source inline("border{,-t,-b,-r,-l,-x,-y}-{0,2,3,4,5,6,7,8}");
+
+/* The standard 1px borders (e.g., border, border-t) */
+@source inline("border{,-t,-b,-r,-l,-x,-y}");
+
+/* Styles */
+@source inline("border-{solid,dashed,dotted,double,none}");
+
+/* Radius: rounded, rounded-md, rounded-tr-lg, etc. */
+@source inline("rounded{,-t,-b,-r,-l,-tl,-tr,-bl,-br}{,-none,-sm,-md,-lg,-xl,-2xl,-3xl,-full}");
+
+/* 
+  4. TYPOGRAPHY
+*/
+/* Font Sizes */
+@source inline("text-{xs,sm,base,lg,xl,2xl,3xl,4xl,5xl,6xl,7xl,8xl,9xl}");
+
+/* Font Weights */
+@source inline("font-{thin,extralight,light,normal,medium,semibold,bold,extrabold,black}");
+
+/* Alignment */
+@source inline("text-{left,center,right,justify,start,end}");
+
+/* Decoration */
+@source inline("{underline,overline,line-through,no-underline}");
+
+/* Casing & Style */
+@source inline("{uppercase,lowercase,capitalize,normal-case,italic,not-italic}");
