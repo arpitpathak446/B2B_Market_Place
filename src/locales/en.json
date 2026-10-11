@@ -20,7 +20,7 @@
     "switchLanguage": "Switch language"
   },
   "demo": {
-    "banner": "Demo data on this device. The next platform release adds cross-device accounts, document verification, and a real admin queue.",
+    "banner": " ",
     "statsNote": "Counts are seeded locally so you can see every screen. Production will read live from the database."
   },
   "home": {
